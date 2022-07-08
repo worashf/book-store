@@ -1,0 +1,31 @@
+
+* {
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav {
+  display: flex;
+}
+
+.nav-item {
+  margin: 0 10px;
+}
+
+.book-info {
+  margin: 0 10%;
+}
+
+.book-form {
+  margin: 0 10%;
+}
