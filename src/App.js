@@ -4,6 +4,7 @@ import BookPage from './pages/Book.Page';
 import NoFound from './pages/NoFound';
 import Categories from './components/Categories';
 import './App.css';
+
 function App() {
   return (
     <Router>
