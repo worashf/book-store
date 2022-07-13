@@ -12,7 +12,23 @@ export const removeBook = (id) => ({
   type: REMOVE_BOOK,
   id,
 });
-const books = [];
+const books = [
+  {
+    id: 1,
+    title: 'Cheque book',
+    author: 'Vasdev Mohi',
+  },
+  {
+    id: 2,
+    title: 'The Overstory',
+    author: 'Richard Powers',
+  },
+  {
+    id: 3,
+    title: 'The Braille edition of the book Exam Warriors',
+    author: 'PM Narendra Modi',
+  },
+];
 
 const bookReducer = (state = books, action) => {
   switch (action.type) {
