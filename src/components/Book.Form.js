@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+
+import { nanoid } from '@reduxjs/toolkit';
 import { useDispatch } from 'react-redux';
-import { addBook } from '../redux/books/books';
+import { addBookThunk } from '../redux/books/bookStoreAsync';
 
 const BookFrom = () => {
   const [title, setTitle] = useState('');
@@ -8,12 +10,21 @@ const BookFrom = () => {
 
   const dispatch = useDispatch();
 
+  const createBook = (title, author) => {
+    const book = {
+      item_id: nanoid(),
+      title,
+      author,
+      category: 'Not Specificated',
+    };
+
+    return book;
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
-    const id = Math.random();
-    dispatch(addBook(id, title, author));
-    setTitle((e.target.title.value = ''));
-    setAuthor((e.target.author.value = ''));
+    dispatch(addBookThunk(createBook(title, author)));
+    e.target.title.value = '';
+    e.target.author.value = '';
   };
 
   return (
@@ -23,14 +34,12 @@ const BookFrom = () => {
         type="text"
         name="title"
         placeholder="Book Title"
-        value={title}
         onChange={(e) => setTitle(e.target.value)}
       />
       <input
         type="text"
         name="author"
         placeholder="Author"
-        value={author}
         onChange={(e) => setAuthor(e.target.value)}
       />
       <button type="submit">Add Book</button>

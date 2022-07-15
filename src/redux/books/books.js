@@ -1,36 +1,36 @@
-const ADD_BOOK = 'ADD_BOOK';
-const REMOVE_BOOK = 'REMOVE_BOOK';
+import { createSlice } from '@reduxjs/toolkit';
+import { getBooks } from './bookStoreAsync';
 
-export const addBook = (id, title, author) => ({
-  type: ADD_BOOK,
-  id,
-  title,
-  author,
+const ADD_BOOK = 'books/ADD_BOOK';
+const DELETE_BOOK = 'books/DELETE_BOOK';
+const GET_BOOKS = 'books/GET_BOOKS';
+const initialState = {
+  loading: false,
+};
+
+const books = createSlice({
+  name: 'books',
+  initialState,
+
+  extraReducers: {
+    [getBooks.pending]: (state) => ({
+      ...state,
+      loading: true,
+    }),
+    [getBooks.fulfilled]: (state) => ({
+      ...state,
+      loading: false,
+    }),
+    [getBooks.rejected]: (state) => ({
+      ...state,
+      loading: false,
+    }),
+  },
 });
 
-export const removeBook = (id) => ({
-  type: REMOVE_BOOK,
-  id,
-});
-const books = [
-  {
-    id: 1,
-    title: 'Cheque book',
-    author: 'Vasdev Mohi',
-  },
-  {
-    id: 2,
-    title: 'The Overstory',
-    author: 'Richard Powers',
-  },
-  {
-    id: 3,
-    title: 'The Braille edition of the book Exam Warriors',
-    author: 'PM Narendra Modi',
-  },
-];
+export const bookThunkReducer = books.reducer;
 
-const bookReducer = (state = books, action) => {
+const bookReducer = (state = [], action = {}) => {
   switch (action.type) {
     case ADD_BOOK:
       return [
@@ -39,11 +39,13 @@ const bookReducer = (state = books, action) => {
           id: action.id,
           title: action.title,
           author: action.author,
+          category: action.category,
         },
       ];
-
-    case REMOVE_BOOK:
+    case DELETE_BOOK:
       return state.filter((book) => book.id !== action.id);
+    case GET_BOOKS:
+      return action.payload;
     default:
       return state;
   }
