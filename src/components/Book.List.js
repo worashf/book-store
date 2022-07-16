@@ -8,9 +8,7 @@ import './bookList.css';
 const BookList = () => {
   const books = useSelector((state) => state.bookReducer);
   const dispatch = useDispatch();
-  // const appId = 'MtkgUTsGBdDr5ZeaGTZp';
-  // const baseUrl = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/7Yk0oIip10822KACVnk2/books/';
-  console.log('state', books);
+
   useEffect(() => {
     dispatch(getBooks());
   }, []);

@@ -15,7 +15,6 @@ export const getBooks = createAsyncThunk(GET_BOOKS, async (_, { dispatch }) => {
 export const addBookThunk = createAsyncThunk(
   ADD_BOOK,
   async (book, { dispatch }) => {
-    console.log(1, book);
     const data = await addBook(book).then(() => dispatch({
       type: ADD_BOOK,
       id: book.item_id,

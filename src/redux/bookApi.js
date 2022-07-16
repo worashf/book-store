@@ -26,7 +26,7 @@ export const fetchBooks = async () => {
 export const addBook = async (book) => {
   try {
     const res = await axios.post(baseUrl, book);
-    console.log('res[po', res);
+
     return res.data;
   } catch (err) {
     throw new Error(err);

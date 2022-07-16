@@ -6,7 +6,10 @@ import { deleteBookThunk } from '../redux/books/bookStoreAsync';
 
 const BookItem = ({ id, title, author }) => {
   const dispatch = useDispatch();
-
+  const circleProgress = {
+    width: '80px',
+    height: '80px',
+  };
   return (
     <div className="book-info">
       <div className="book">
@@ -33,7 +36,7 @@ const BookItem = ({ id, title, author }) => {
           </div>
         </div>
         <div className="progress">
-          <div style={{ width: 80, height: 80 }} className="circle-bar">
+          <div style={circleProgress} className="circle-bar">
             <CircularProgressbar
               value={80}
               styles={buildStyles({
