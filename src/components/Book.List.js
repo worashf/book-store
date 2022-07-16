@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import BookItem from './Book.Item';
 import { getBooks } from '../redux/books/bookStoreAsync';
+import './bookList.css';
 
 const BookList = () => {
   const books = useSelector((state) => state.bookReducer);
@@ -15,7 +16,7 @@ const BookList = () => {
   }, []);
 
   return (
-    <>
+    <div className="book-container">
       {books.length ? (
         books.map((book) => (
           <BookItem
@@ -28,7 +29,8 @@ const BookList = () => {
       ) : (
         <div className="fieldEmpty">Books not found</div>
       )}
-    </>
+      <div className="book-divider" />
+    </div>
   );
 };
 

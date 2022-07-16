@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
+import { buildStyles, CircularProgressbar } from 'react-circular-progressbar';
 import { deleteBookThunk } from '../redux/books/bookStoreAsync';
 
 const BookItem = ({ id, title, author }) => {
@@ -8,30 +9,52 @@ const BookItem = ({ id, title, author }) => {
 
   return (
     <div className="book-info">
-      <div className="info">
-        <p>Book categories</p>
-        <h3 style={{ color: 'red' }}>{title}</h3>
-        <p>{author}</p>
-        <div className="book-btn">
-          <button type="button"> Comments</button>
-          <button type="button" onClick={() => dispatch(deleteBookThunk(id))}>
-            Remove
+      <div className="book">
+        <div className="info">
+          <p className="book-category">Book categories</p>
+          <h3 className="book-title">{title}</h3>
+          <p className="book-author">{author}</p>
+          <div className="book-btns">
+            <button type="button" className="book-btn">
+              Comments
+            </button>
+            <div className="btn-devider" />
+            <button
+              type="button"
+              className="book-btn"
+              onClick={() => dispatch(deleteBookThunk(id))}
+            >
+              Remove
+            </button>
+            <div className="btn-devider" />
+            <button type="button" className="book-btn">
+              Edit
+            </button>
+          </div>
+        </div>
+        <div className="progress">
+          <div style={{ width: 80, height: 80 }} className="circle-bar">
+            <CircularProgressbar
+              value={80}
+              styles={buildStyles({
+                pathColor: '#0290ff',
+                rotation: 90,
+              })}
+            />
+          </div>
+          <div className="status">
+            <h4 className="percent-completed">80%</h4>
+            <p className="completed-status">Completed</p>
+          </div>
+        </div>
+        <div className="divider" />
+        <div className="chapters">
+          <p className="current-chapter">Current chapter</p>
+          <h4 className="chapter">Chapter</h4>
+          <button type="button" className="chapter-btn">
+            Update progress
           </button>
-          <button type="button">Edit</button>
         </div>
-      </div>
-      <div className="progress">
-        <div className="progress-icon" />
-        <div className="status">
-          <h4>100%</h4>
-          <p>Completed</p>
-        </div>
-      </div>
-
-      <div className="chapter">
-        <p>Current chapter</p>
-        <h4>Chapter</h4>
-        <button type="button">Update progress</button>
       </div>
     </div>
   );
