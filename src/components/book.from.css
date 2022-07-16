@@ -21,6 +21,7 @@
   border: solid 1px #e8e8e8;
   width: 50%;
   color: #aca5a5;
+  font-family: Montserrat, sans-serif;
 }
 
 .category-input {
@@ -28,6 +29,7 @@
   border-radius: 4px;
   width: 20%;
   border: solid 1px #e8e8e8;
+  font-family: Montserrat, sans-serif;
 }
 
 .form-btn {
