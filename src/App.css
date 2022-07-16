@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;600;700&family=Roboto+Slab:wght@300;400;500;700&display=swap);
 
 * {
   padding: 0;
@@ -8,24 +9,20 @@ ul {
   list-style: none;
 }
 
-.nav-bar {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+body {
+  background-color: #f5f6fa;
 }
 
-.nav {
-  display: flex;
+#root {
+  margin: 0;
+  padding: 0 0 8%;
+  border-radius: 4px;
+  box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.05);
+  background-color: #fafafa;
 }
 
-.nav-item {
-  margin: 0 10px;
-}
-
-.book-info {
-  margin: 0 10%;
-}
-
-.book-form {
-  margin: 0 10%;
+.book-divider {
+  height: 0.125rem;
+  margin: 2.5rem 0.063rem 0 0;
+  border: solid 1px #e8e8e8;
 }

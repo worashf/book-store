@@ -1,0 +1,147 @@
+.book-container {
+  padding: 4% 4% 0 4%;
+}
+
+.book-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.book {
+  background-color: #fff;
+  border-radius: 4px;
+  border: 1px solid #e8e8e8;
+  padding: 2rem 2rem 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 0 0.063rem 0.938rem 0;
+  height: 10.625rem;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 60%;
+}
+
+.book-category {
+  color: #121212;
+  margin: 0 2.438rem 0 0;
+  opacity: 0.5;
+  font-family: Montserrat, sans-serif;
+  font-size: 0.875rem;
+  font-weight: bold;
+}
+
+.book-title {
+  margin: 0.188rem 20.188rem 0 0;
+  font-family: RobotoSlab, sans-serif;
+  font-size: 1.375rem;
+  font-weight: bold;
+  letter-spacing: -0.2px;
+  color: #121212;
+}
+
+.book-author {
+  margin: 0.25rem 0 0;
+  font-family: RobotoSlab, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: #4386bf;
+}
+
+.book-btns {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.313rem;
+}
+
+.book-btn {
+  margin: 0.188rem 0.938rem 0.125rem 0;
+  font-family: RobotoSlab, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: #4386bf;
+  border: 0;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.btn-devider {
+  width: 0.125rem;
+  height: 1.5rem;
+  margin: 0.75rem 1.063rem 0 0.938rem;
+  border: solid 1px #e8e8e8;
+}
+
+.progress {
+  display: flex;
+  align-items: center;
+  margin: 1rem 2.5rem 4.063rem 0;
+}
+
+.circle-bar {
+  margin: 0.5rem 1.5rem 4.063rem 0;
+}
+
+.status {
+  margin: 0 1.5rem 4.063rem 0;
+}
+
+.percent-completed {
+  margin: 0 0.063rem 0.938rem 0;
+  font-family: Montserrat, sans-serif;
+  font-size: 2rem;
+  color: #121212;
+}
+
+.completed-status {
+  opacity: 0.5;
+  font-family: Montserrat, sans-serif;
+  color: #121212;
+  font-size: 0.875rem;
+}
+
+.divider {
+  width: 0.125rem;
+  height: 4.375rem;
+  margin: 1.125rem 2rem 0 0;
+  border: solid 1px #e8e8e8;
+}
+
+.chapters {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 25%;
+}
+
+.current-chapter {
+  margin: 0.063rem 0 0 0.688rem;
+  opacity: 0.5;
+  font-family: RobotoSlab, sans-serif;
+  font-size: 0.813rem;
+  color: #121212;
+}
+
+.chapter {
+  margin: 0.438rem 0.813rem 0.25rem 0.688rem;
+  font-family: RobotoSlab, sans-serif;
+  font-size: 1rem;
+  color: #121212;
+}
+
+.chapter-btn {
+  margin: 0.75rem;
+  padding: 0.438rem 1.188rem 0.5rem 1.375rem;
+  border-radius: 3px;
+  border: 0;
+  background-color: #0290ff;
+  font-family: RobotoSlab, sans-serif;
+  font-size: 0.813rem;
+  color: #fff;
+}
