@@ -16,6 +16,7 @@ const createBooksList = (obj) => {
 export const fetchBooks = async () => {
   try {
     const res = await axios.get(baseUrl);
+
     return createBooksList(res.data);
   } catch (err) {
     throw new Error(err);
